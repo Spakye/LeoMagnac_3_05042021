@@ -41,8 +41,10 @@
 @keyframes fillHeart {
 	from {
 		fill: transparent;
+		stroke: black;
 	}
 	to {
+		stroke: $color-primary;
 		fill: $color-primary;
 	}
 }
