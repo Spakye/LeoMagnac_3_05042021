@@ -1,0 +1,11 @@
+.btn-primary {
+	padding: 1rem 1.2rem;
+	color: white;
+	border-radius: 50px;
+	background: linear-gradient($color-secondary, $color-primary);
+	@include block-shadow;
+	&:hover {
+		opacity: 0.8;
+		box-shadow: 3px 3px 5px rgb(70, 69, 69);
+	}
+}

@@ -1,0 +1,160 @@
+.img_heading_restaurant_page {
+	width: 100vw;
+	object-fit: cover;
+	position: relative;
+	z-index: -1;
+	max-width: 100%;
+	@media screen and (min-width: $desktop) {
+		height: 20vw;
+		object-position: 100% 60%;
+	}
+}
+
+.block_restaurant {
+	margin-top: -10vw;
+	overflow: hidden;
+	padding: 2rem 5%;
+	background-color: $color-main-bg;
+	border-radius: 50px 50px 0 0;
+
+	@media screen and (min-width: $desktop) {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		border-radius: 0;
+		margin-top: 0;
+	}
+
+	&__heading {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 1rem;
+		margin-right: 1rem;
+
+		@media screen and (min-width: $desktop) {
+			justify-content: center;
+			margin: 2rem 0;
+			flex-basis: 100%;
+			svg {
+				margin-left: 1rem;
+			}
+		}
+	}
+	&__step {
+		overflow: visible;
+
+		&__heading {
+			margin-bottom: 1rem;
+			&__border {
+				margin-top: 0.2rem;
+				border-bottom: 2px #99e2d0 solid;
+				width: 10vw;
+				@media screen and (min-width: $desktop) {
+					width: 3vw;
+				}
+				@media screen and (min-width: $mobile) and (max-width: $tablet) {
+					width: 5vw;
+				}
+			}
+		}
+		&__choice {
+			@include block-shadow;
+			cursor: pointer;
+			background-color: white;
+			border-radius: 20px;
+			margin-bottom: 1.5rem;
+			display: flex;
+			justify-content: space-between;
+			box-sizing: border-box;
+			overflow: hidden;
+			position: relative;
+
+			&:hover .validate {
+				width: 20%;
+			}
+			&:hover .validate i {
+				transform: rotate(360deg);
+				transition: all 700ms;
+			}
+			&:hover .block_restaurant__step__description {
+				width: 50%;
+			}
+			.validate {
+				background-color: $color-tertiary;
+				border-radius: 0 20px 20px 0;
+				width: 0%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				transition: all 700ms;
+			}
+			i {
+				color: white;
+				font-size: 1.5rem;
+			}
+		}
+		&__description {
+			margin: 1rem 0 1rem 5%;
+			width: 80%;
+			transition: all 700ms;
+			p {
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+
+			p:nth-child(1) {
+				font-weight: bold;
+				font-size: 1.1rem;
+				margin-bottom: 0.1rem;
+			}
+			p:nth-child(2) {
+				font-size: 0.9rem;
+				font-weight: 300;
+			}
+			&__prix {
+				font-weight: bold;
+				align-self: flex-end;
+				margin-bottom: 1rem;
+				margin-right: 5%;
+			}
+		}
+		@media screen and (min-width: $desktop) {
+			width: 30%;
+		}
+	}
+	&__order {
+		text-align: center;
+		margin: 2rem auto;
+
+		@media screen and (min-width: $desktop) {
+			flex-basis: 100%;
+		}
+	}
+}
+
+.block_restaurant__step {
+	@for $i from 1 through 4 {
+		&__choice:nth-child(#{$i}) {
+			opacity: 0;
+			animation: fadeIn 0.5s;
+			animation-delay: calc((-2s + #{$i}s) / 2);
+			animation-fill-mode: forwards;
+			@keyframes fadeIn {
+				0% {
+					opacity: 0;
+					top: +1.5rem;
+				}
+				50% {
+					opacity: 1;
+					top: +1.5rem;
+				}
+				100% {
+					top: 0;
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

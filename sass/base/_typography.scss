@@ -1,0 +1,7 @@
+body {
+	font-family: nth($font-text, 1), nth($font-text, 2);
+}
+
+.font_shrikhand {
+	font-family: nth($font-title, 1), nth($font-title, 2);
+}

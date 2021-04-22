@@ -1,0 +1,180 @@
+.location {
+	background-color: $color-location-bg;
+	display: flex;
+	padding: 1rem 0;
+	justify-content: center;
+	i {
+		margin-right: 1rem;
+	}
+}
+
+.description {
+	background-color: $color-main-bg;
+	text-align: center;
+	padding: 3rem 20%;
+	&__text {
+		margin: 1rem 0 2rem 0;
+	}
+}
+
+.operation {
+	padding: 0% 5%;
+	&__title {
+		margin: 2rem 0;
+	}
+	&__step {
+		@include block-shadow;
+		position: relative;
+		padding: 1.5rem;
+		margin-bottom: 1.5rem;
+		border-radius: 15px;
+		background-color: $color-main-bg;
+
+		label {
+			background-color: $color-primary;
+			color: white;
+			border-radius: 50%;
+			padding: 4px 8px;
+		}
+		p {
+			font-weight: bold;
+		}
+
+		i {
+			color: gray;
+			font-size: 1.2rem;
+		}
+
+		&--purple {
+			background-color: mix($color-main-bg, $color-primary, 92.5%);
+			i {
+				color: $color-primary;
+			}
+		}
+	}
+	@media screen and (max-width: $mobile) {
+		&__step {
+			display: grid;
+			grid-template-columns: 2fr 5fr 1fr;
+			align-items: center;
+			label {
+				position: absolute;
+				left: -3vw;
+			}
+			i {
+				justify-self: center;
+			}
+		}
+	}
+	@media screen and (min-width: $mobile) and (max-width: $tablet) {
+		&__step {
+			display: grid;
+			grid-template-columns: 1fr 2fr 1fr;
+			align-items: center;
+			i {
+				justify-self: center;
+			}
+			label {
+				position: absolute;
+				left: -1.5%;
+			}
+		}
+	}
+	@media screen and (min-width: $desktop) {
+		padding: 3rem 5%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		&__title {
+			margin-bottom: 3rem;
+			margin-right: 100%;
+		}
+		&__step {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 25%;
+			label {
+				display: block;
+				position: absolute;
+				top: -1.5vh;
+			}
+			i {
+				margin: 1rem 0;
+				font-size: 1.5rem;
+			}
+		}
+	}
+}
+
+.restaurants {
+	padding: 3rem 5%;
+	background-color: $color-main-bg;
+	&__item {
+		@include block-shadow;
+		border-radius: 25px;
+		background-color: white;
+		margin-top: 1.5rem;
+	}
+	&__new {
+		margin: 1rem 1rem 0 65%;
+		border-radius: 5px;
+		position: absolute;
+		padding: 0.5rem 0.6rem;
+		background-color: $color-tertiary;
+		color: darken($color-tertiary, 50);
+		@media screen and (min-width: $desktop) {
+			margin-left: 12vw;
+		}
+		@media screen and (min-width: $mobile) and (max-width: $tablet) {
+			margin-left: 70%;
+		}
+	}
+	&__picture {
+		width: 90vw;
+		height: 50vw;
+		object-fit: cover;
+		border-radius: 25px 25px 0 0;
+	}
+	&__description {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1rem 5%;
+
+		// i {
+		// 	font-size: 1.5rem;
+		// }
+		// i:active {
+		// 	box-sizing: content-box;
+		// 	background-color: red;
+		// 	color: pink;
+		// }
+		// img:active {
+		// 	// background-color: pink;
+		// 	fill: pink;
+		// }
+		// svg:hover {
+		// 	// background-color: red;
+		// 	fill: pink;
+		// }
+	}
+	&__details {
+		display: flex;
+		flex-direction: column;
+	}
+
+	@media screen and (min-width: $desktop) {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		&__heading {
+			margin-right: 100%;
+		}
+
+		&__picture {
+			width: 20vw;
+			height: 15vw;
+		}
+	}
+}

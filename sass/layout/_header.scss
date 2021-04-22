@@ -1,0 +1,25 @@
+.header {
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr;
+	align-items: center;
+	padding: 1rem 0;
+	justify-items: center;
+	&__logo {
+		grid-column-start: 2;
+		width: 40vw;
+	}
+	&__return {
+		font-size: 1.5rem;
+	}
+
+	@media screen and (min-width: $desktop) {
+		padding: 1rem 5%;
+		display: flex;
+		&__logo {
+			width: 12vw;
+		}
+		i {
+			margin-right: 2rem;
+		}
+	}
+}
