@@ -1,5 +1,6 @@
 .img_heading_restaurant_page {
 	width: 100vw;
+	height: 70vw;
 	object-fit: cover;
 	position: relative;
 	z-index: -1;
@@ -135,7 +136,7 @@
 }
 
 .block_restaurant__step {
-	@for $i from 1 through 4 {
+	@for $i from 1 through 5 {
 		&__choice:nth-child(#{$i}) {
 			opacity: 0;
 			animation: fadeIn 0.5s;

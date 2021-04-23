@@ -31,7 +31,6 @@
 	fill: transparent;
 	stroke: black;
 	stroke-width: 10;
-
 	&:hover {
 		animation: fillHeart 2s;
 		animation-fill-mode: forwards;
@@ -39,11 +38,11 @@
 }
 
 @keyframes fillHeart {
-	from {
+	0% {
 		fill: transparent;
 		stroke: black;
 	}
-	to {
+	100% {
 		stroke: $color-primary;
 		fill: $color-primary;
 	}
